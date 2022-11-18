@@ -8,35 +8,35 @@ body{
   font-weight: 800;
 }
 
+.para {
+  font-size: 22px;
+} /* applies to both para and para-small, therefore should come first */
+
 .small-para {
   font-size: 14px;
   font-weight: 800;
-}
-
-.para {
-  font-size: 22px;
-}
-
-.confirm {
-  background: green;
-  color: white;
-  font-weight: bold;
-} 
+} /* moved from above para to below para in order to avoid override by para styling */
 
 .button {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   font-size: 20px;
-}
+} /* applies to both confirm and cancel button, should come first */
 
-.child {
-  color: rgb(0, 0, 0);
-  font-weight: 800;
-  font-size: 14px;
-}
+.confirm {
+  background: green;
+  color: white;
+  font-weight: bold;
+} /* applies only to confirm button and therefore should come after the styling of button */
 
 div.text {
   color: rgb(0, 0, 0);
   font-size: 22px;
   font-weight: 100;
-}
+} /* applies to all the div.text elements, including the one nested inside the other div */
+
+div .child {
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  font-size: 14px;
+} /* changing to div.child, applies only to the nested div inside, should come at the end */
